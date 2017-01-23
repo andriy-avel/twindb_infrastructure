@@ -19,6 +19,7 @@ from twindb_infrastructure.util import printf, parse_config
 class TwinDBInfraException(Exception):
     pass
 
+
 CONFIG = None
 
 
@@ -41,10 +42,9 @@ def main(ctx, config, debug, version):
     if not ctx.invoked_subcommand:
         if version:
             print(__version__)
-            exit(0)
         else:
             print(ctx.get_help())
-            exit(-1)
+        return 0
 
     setup_logging(log, debug=debug)
     log.debug('Using config %s' % config)
