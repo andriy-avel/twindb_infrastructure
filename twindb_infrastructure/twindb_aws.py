@@ -6,7 +6,7 @@ import boto3
 from botocore.exceptions import ClientError
 import click
 import json
-from twindb_infrastructure import setup_logging
+from twindb_infrastructure import setup_logging, __version__
 from twindb_infrastructure import log
 from twindb_infrastructure.config.config import TWINDB_INFRA_CONFIG, \
     ConfigException
@@ -19,19 +19,32 @@ from twindb_infrastructure.util import printf, parse_config
 class TwinDBInfraException(Exception):
     pass
 
+CONFIG = None
 
-@click.group()
+
+@click.group(invoke_without_command=True)
 @click.option('--config', default=TWINDB_INFRA_CONFIG,
               help='Config file',
               show_default=True,
               type=click.Path(exists=True))
 @click.option('--debug', is_flag=True, default=False,
               help='Print debug messages')
-def main(config, debug):
+@click.option('--version', help='Show tool version and exit.', is_flag=True,
+              default=False)
+@click.pass_context
+def main(ctx, config, debug, version):
     """
     Console script to work with TwinDB Amazon Infrastructure
     """
     global CONFIG
+
+    if not ctx.invoked_subcommand:
+        if version:
+            print(__version__)
+            exit(0)
+        else:
+            print(ctx.get_help())
+            exit(-1)
 
     setup_logging(log, debug=debug)
     log.debug('Using config %s' % config)
