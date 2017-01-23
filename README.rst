@@ -9,7 +9,7 @@ TwinDB Infrastructure
     :target: https://codecov.io/gh/twindb/twindb_infrastructure
 
 .. image:: https://readthedocs.org/projects/twindb_infrastructure/badge/?version=master
-    :target: http://twindb-infrastructure.readthedocs.io/en/master/
+    :target: http://twindb-infrastructure.readthedocs.io/
     :alt: Documentation Status
 
 
