@@ -16,7 +16,7 @@ CONFIG = None
 @click.option('--config', default=TWINDB_INFRA_CONFIG,
               help='Config file',
               show_default=True,
-              type=click.Path(exists=True))
+              type=click.Path())
 @click.option('--debug', is_flag=True, default=False,
               help='Print debug messages')
 @click.option('--version', help='Show tool version and exit.', is_flag=True,
