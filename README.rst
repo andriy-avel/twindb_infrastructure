@@ -8,8 +8,8 @@ TwinDB Infrastructure
 .. image:: https://img.shields.io/codecov/c/github/twindb/twindb_infrastructure.svg
     :target: https://codecov.io/gh/twindb/twindb_infrastructure
 
-.. image:: https://readthedocs.org/projects/twindb_infrastructure/badge/?version=stable
-    :target: http://twindb-infrastructure.readthedocs.io/en/stable/
+.. image:: https://readthedocs.org/projects/twindb_infrastructure/badge/?version=master
+    :target: http://twindb-infrastructure.readthedocs.io/en/master/
     :alt: Documentation Status
 
 
